@@ -150,6 +150,7 @@ public class MyDodo extends Dodo
         turnRight();
         turnRight();
     }
+    
     /**
      * Zolang er geen obstakels tussen dodo en ei zit,
      * zet hij een stap voor uit toto hij op een ei staat 
@@ -160,6 +161,15 @@ public class MyDodo extends Dodo
             move();
         
         }
+    }
+    
+    /**
+     * Draait zich om loopt naar de einde van de wereld
+     */
+    public void backToStartOfRowAndFaceBack() {
+        turn180();
+        walkToWorldEdge();
+        turn180();
     }
 }
 
