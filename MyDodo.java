@@ -157,5 +157,16 @@ public class MyDodo extends Dodo
         turnRight();
         turnRight();
     }
+    /**
+     * Zolang er geen obstakels tussen dodo en ei zit,
+     * zet hij een stap voor uit toto hij op een ei staat 
+     */
+    
+    public void gotoEgg(){
+        while (!onEgg()){
+            move();
+        
+        }
+    }
 }
 
