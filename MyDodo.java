@@ -171,5 +171,31 @@ public class MyDodo extends Dodo
         walkToWorldEdge();
         turn180();
     }
+    
+    public void climbOverFence () {
+        turnLeft();
+        move();
+        turnRight();
+        move();
+        move();
+        turnRight();
+        move();
+        turnLeft();
+    }
+    
+    /**
+     * Loopt naar de rand van de wereld en klimt over hekken heen.
+     */
+    
+    public void walkToWorldEdgeClimbingOverFences() {
+    while (!borderAhead()) {
+        if(!fenceAhead()) {
+            move();
+        }else{
+            climbOverFence();
+        }
+    }
 }
+}
+
 
