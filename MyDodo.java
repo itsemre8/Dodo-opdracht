@@ -70,22 +70,16 @@ public class MyDodo extends Dodo
     
      public boolean grainAhead(){
         move();
-        if(onGrain() == true){
-        turnRight();
-        turnRight();
-        move();
-        turnRight();
-        turnRight();
-        return true;
+        if(onGrain() == true) {
+            stepOneCelBackwards();
+            return true;
         }else{
-        turnRight();
-        turnRight();
-        move();
-        turnRight();
-        turnRight();
+        stepOneCelBackwards();
         return false;
-        }
-        }
+    }
+    }
+
+        
     
     /**
      * Returns the number of eggs Dodo has hatched so far.
@@ -195,6 +189,12 @@ public class MyDodo extends Dodo
             climbOverFence();
         }
     }
+}
+
+public void stepOneCelBackwards() {
+    turn180();
+    move();
+    turn180();
 }
 }
 
