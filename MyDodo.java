@@ -191,12 +191,18 @@ public class MyDodo extends Dodo
     }
 }
 
+/**
+ * Dodo zet een stap achteruit
+ */
 public void stepOneCelBackwards() {
     turn180();
     move();
     turn180();
 }
 
+/**
+ * Terwijl dodo loopt pakt ze de grains op en laat de coordintes van de graains zien
+ */
 public void pickUpGrainsAndPrintCoordinates() {
     while(!borderAhead()) {
         if (onGrain()) {
