@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.BlueEgg.image=blue-egg-new.png
-class.Fence.image=fence2.png
+class.Fence.image=fence.png
 class.GoldenEgg.image=golden-egg-new.png
 class.Grain.image=grain.png
 class.Mauritius.image=sandstone60.jpg
@@ -113,8 +113,8 @@ dependency9.to=WorldWriter
 dependency9.type=UsesDependency
 editor.fx.0.height=776
 editor.fx.0.width=1312
-editor.fx.0.x=52
-editor.fx.0.y=36
+editor.fx.0.x=86
+editor.fx.0.y=115
 height=974
 package.numDependencies=35
 package.numTargets=15
