@@ -196,6 +196,21 @@ public void stepOneCelBackwards() {
     move();
     turn180();
 }
+
+public void pickUpGrainsAndPrintCoordinates() {
+    while(!borderAhead()) {
+        if (onGrain()) {
+            pickUpGrain();
+            System.out.println("X:" + getX() + ", Y: "+ getY());
+        }
+        move();
+    }
+    if(onGrain()) {
+        pickUpGrain();
+        System.out.println("X:" + getX() + ", Y: "+ getY());
+    }
+}
+
 }
 
 
