@@ -217,6 +217,18 @@ public void pickUpGrainsAndPrintCoordinates() {
     }
 }
 
+public void vulLegeNestenOp () {
+    while (!borderAhead()) {
+        if (onNest() && canLayEgg()) {
+            layEgg();
+        }
+        move();
+    }
+    if(onNest() && canLayEgg()) {
+        layEgg();
+    }
+}
+
 }
 
 
