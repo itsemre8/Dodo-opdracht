@@ -216,7 +216,9 @@ public void pickUpGrainsAndPrintCoordinates() {
         System.out.println("X:" + getX() + ", Y: "+ getY());
     }
 }
-
+/**
+ * Dood springt door de hekken en legt een ei op de nest
+ */
 public void vulLegeNestenOp () {
     while (!borderAhead()) {
         if (onNest() && canLayEgg()) {
@@ -238,6 +240,23 @@ public void walkToNestClimbingOverFences() {
         }
     }
     layEgg();
+}
+
+/**
+ * Dodo loopt om de hekken heen
+ */
+public void walkAroundFencedArea() {
+ while (!onEgg()) {
+        if (fenceAhead()) {
+            turnLeft();
+        } else {
+            move();
+            turnRight();
+            if (fenceAhead()) {
+                turnLeft(); 
+            }
+        }
+    }
 }
 
 }
