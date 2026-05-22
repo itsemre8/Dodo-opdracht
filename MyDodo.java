@@ -229,6 +229,17 @@ public void vulLegeNestenOp () {
     }
 }
 
+public void walkToNestClimbingOverFences() {
+    while(!onNest()) {
+        if (fenceAhead()) {
+            climbOverFence();
+        }else{
+            move();
+        }
+    }
+    layEgg();
+}
+
 }
 
 
