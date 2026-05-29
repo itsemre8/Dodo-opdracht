@@ -295,6 +295,12 @@ public void doolhofLastig() {
 
 }
 
+public void faceEast() {
+    while(getDirection() !=EAST) {
+        turnLeft();
+    }
+}
+
 }
 
 
