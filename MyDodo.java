@@ -269,4 +269,14 @@ public void eggTrailToNest() {
     }
 }
 
+public void doolhof() {
+    while(!onNest()) {
+        turnRight();
+        while(fenceAhead()) {
+            turnLeft();
+        }
+        move();
+    }
+}
+
 }
