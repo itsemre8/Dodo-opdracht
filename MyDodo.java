@@ -269,6 +269,10 @@ public void eggTrailToNest() {
     }
 }
 
+
+/**
+ * Dodo probeert door de doolhod zijn neest te vinden
+ */
 public void doolhof() {
     while(!onNest()) {
         turnRight();
@@ -279,4 +283,18 @@ public void doolhof() {
     }
 }
 
+public void doolhofLastig() {
+    while (!onNest()) {
+        turnRight();
+        while (fenceAhead()) {
+            turnLeft();
+        }
+        move();
+    }
+    System.out.println("Gefeliciteerd dodo heeft de nest gevonden");
+
 }
+
+}
+
+
