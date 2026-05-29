@@ -79,8 +79,6 @@ public class MyDodo extends Dodo
     }
     }
 
-        
-    
     /**
      * Returns the number of eggs Dodo has hatched so far.
      * 
@@ -107,9 +105,6 @@ public class MyDodo extends Dodo
         }
     }
 
-    
-    
-    
    /**
     * Zet een stap tot de rande van de wereld
     */
@@ -216,6 +211,7 @@ public void pickUpGrainsAndPrintCoordinates() {
         System.out.println("X:" + getX() + ", Y: "+ getY());
     }
 }
+
 /**
  * Dood springt door de hekken en legt een ei op de nest
  */
@@ -259,6 +255,18 @@ public void walkAroundFencedArea() {
     }
 }
 
+/**
+ * Dodo probeert de nest te vinden
+ */
+
+public void eggTrailToNest() {
+    while (!onNest()) {
+        turnRight();
+        while (!eggAhead() && !nestAhead()) {
+            turnLeft();
+        }
+        move();
+    }
 }
 
-
+}
