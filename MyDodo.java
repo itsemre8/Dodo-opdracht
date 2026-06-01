@@ -320,6 +320,28 @@ public void layTrailOfEggs(int n) {
     }
 }
 
+public int countEggsInRow() {
+    int count = 0;
+    while (!borderAhead()) {
+        if(onEgg()) count ++;
+        move();
+    }
+    if(onEgg()) count++;
+    return count;
+}
+public int countAllEggs() {
+    int total = 0;
+    int row = 0;
+    while (row < getWorld().getHeight()) {
+        setLocation(0, row);
+        setDirection(EAST);
+        total += countEggsInRow();
+        row++;
+    }
+    System.out.println("Total:" + total);
+    return total;
+}
+
 }
 
 
