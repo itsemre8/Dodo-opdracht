@@ -271,7 +271,7 @@ public void eggTrailToNest() {
 
 
 /**
- * Dodo probeert door de doolhod zijn neest te vinden
+ * Dodo probeert door de doolhof zijn neest te vinden
  */
 public void doolhof() {
     while(!onNest()) {
@@ -283,6 +283,9 @@ public void doolhof() {
     }
 }
 
+/**
+ * Dodo probeert door de doolhof zijn nest te vinden
+ */
 public void doolhofLastig() {
     while (!onNest()) {
         turnRight();
@@ -298,6 +301,22 @@ public void doolhofLastig() {
 public void faceEast() {
     while(getDirection() !=EAST) {
         turnLeft();
+    }
+}
+
+/**
+ * Dodo legt gegeven aantal eiren en blijft op laatste ei staan.
+ */
+public void layTrailOfEggs(int n) {
+    if (n <= 0) return;
+    
+    int i = 0;
+    while (i < n) {
+        layEgg();
+        i++;
+        if (i < n) {
+            move();
+        }
     }
 }
 
