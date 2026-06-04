@@ -320,6 +320,10 @@ public void layTrailOfEggs(int n) {
     }
 }
 
+
+/**
+ * Dodo telt de eiren op en roept de totaal aantal eiren uit
+ */
 public int countEggsInRow() {
     int count = 0;
     while (!borderAhead()) {
@@ -340,6 +344,30 @@ public int countAllEggs() {
     }
     System.out.println("Total:" + total);
     return total;
+}
+
+public int findRowWithMostEggs() {
+    int startX = getX();
+    int startY = getY();
+    
+    int bestRow = 0;
+    int mostEggs= 0;
+    int row = 0;
+    
+    while (row < getWorld().getHeight()) {
+        setLocation(0, row);
+        setDirection(EAST);
+        int eggs = countEggsInRow();
+        if (eggs > mostEggs) {
+            mostEggs = eggs;
+            bestRow = row;
+        }
+        row++;
+    }
+    
+    System.out.println("Rij met meeste eiren: " + bestRow++);
+    setLocation(startX, startY);
+    return bestRow;
 }
 
 }
