@@ -412,4 +412,27 @@ public void stevigMonument() {
     }
 }
 
+
+/**
+ * Dodo bouwt een piramide van eiren
+ */
+public void eggPyramid() {
+    int startX = getX();
+    int startY = getY();
+    int row = 0;
+    
+    while (startY + row < getWorld().getHeight()) {
+        int eggsInRow = 1 + row * 2;
+        int col = 0;
+        while (col < eggsInRow && startX - row + col < getWorld().getWidth()) {
+            if (startX - row + col >= 0) {
+                setLocation(startX - row + col, startY + row);
+                if (canLayEgg()) layEgg();
+            }
+            col++;
+        }
+        row++;
+    }
+}
+
 }
