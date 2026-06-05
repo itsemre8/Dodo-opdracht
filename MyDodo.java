@@ -374,7 +374,7 @@ public int findRowWithMostEggs() {
 }
 
 /**
- * Dodo legt eiren die een eggmomument vormen
+ * Dodo legt eiren die een eggmonument vormen
  */
 public void eggMonument() {
     int startX = getX();
@@ -391,8 +391,25 @@ public void eggMonument() {
     }
 }
 
+/**
+ * Dodo legt eiren die een stevig eggmonument vormen
+ */
+public void stevigMonument() {
+    int startX = getX();
+    int startY = getY();
+    int row = 0;
+    int eggsInRow = 1;
+    
+    while (startY + row < getWorld().getHeight()) {
+        int col = 0;
+        while (col < eggsInRow && startX + col < getWorld().getWidth()) {
+            setLocation(startX + col, startY + row);
+            if (canLayEgg()) layEgg();
+            col++;
+        }
+        eggsInRow = eggsInRow * 2;
+        row++;
+    }
 }
 
-
-
-
+}
