@@ -435,4 +435,18 @@ public void eggPyramid() {
     }
 }
 
+public double gemideldEirenPerRij() {
+    int totalEggs = 0;
+    int row = 0;
+    
+    while (row < getWorld().getHeight()){
+        setLocation(0, row);
+        setDirection(EAST);
+        totalEggs += countEggsInRow();
+        row++;
+        }
+        double average = (double) totalEggs / getWorld().getHeight();
+        System.out.println("Gemideld" + average);
+        return average;
+    }
 }
