@@ -493,5 +493,29 @@ public void addParityBits() {
     setDirection(EAST);
     showCompliment("Pariteitsbit algoritme klaar");
 }
+
+public void findError() {
+    int badRow = -1;
+    int badCol = -1;
+    int row = 0;
+    while (row < getWorld().getHeight()) {
+        setLocation(0, row);
+        setDirection(EAST);
+        if (countEggsInRow() % 2 != 0) badRow = row;
+        row++;
+    }
+
+    int col = 0;
+    while (col < getWorld().getWidth()) {
+        if (countEggsInColumn(col) % 2 != 0) badCol = col;
+        col++;
+    }
+
+    if (badRow == -1) {
+        System.out.println("Geen fout");
+    } else {
+        System.out.println("Fout op (" + badCol + ", " + badRow + ")");
+    }
+}
     
 }
