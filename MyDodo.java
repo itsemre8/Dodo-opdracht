@@ -449,4 +449,49 @@ public double gemideldEirenPerRij() {
         System.out.println("Gemideld" + average);
         return average;
     }
+    
+public int countEggsInColumn(int column) {
+    setLocation(column, 0);
+    setDirection(SOUTH);
+    int count = 0;
+    while (!borderAhead()) {
+        if (onEgg()) count++;
+        move();
+    }
+    if (onEgg()) count++;
+    return count;
+}
+
+public void addRowParityBits() {
+    int currentRow = 0;
+    while (currentRow < getWorld().getHeight()) {
+        setLocation(0, currentRow);
+        setDirection(EAST);
+        int eggsInRow = countEggsInRow();
+        if (eggsInRow % 2 != 0) {
+            setLocation(getWorld().getWidth() - 1, currentRow);
+            getWorld().addObject(new GoldenEgg(), getX(), getY());
+        }
+        currentRow++;
+    }
+}
+public void addColumnParityBits() {
+    int currentColumn = 0;
+    while (currentColumn < getWorld().getWidth()) {
+        int eggsInColumn = countEggsInColumn(currentColumn);
+        if (eggsInColumn % 2 != 0) {
+            setLocation(currentColumn, getWorld().getHeight() - 1);
+            getWorld().addObject(new GoldenEgg(), getX(), getY());
+        }
+        currentColumn++;
+    }
+}
+public void addParityBits() {
+    addRowParityBits();
+    addColumnParityBits();
+    setLocation(0, 0);
+    setDirection(EAST);
+    showCompliment("Pariteitsbit algoritme klaar");
+}
+    
 }
