@@ -246,5 +246,13 @@ public class Mauritius extends World
         addObject(myDodo,0,0);
         myDodo.addRowParityBits();
         myDodo.addParityBits();
+        removeObject(myDodo);
+        removeObject(blueEgg8);
+        removeObject(blueEgg7);
+        removeObject(blueEgg4);
+        removeObject(blueEgg3);
+        removeObject(blueEgg5);
+        removeObject(blueEgg6);
+        removeObject(blueEgg2);
     }
 }

@@ -517,5 +517,43 @@ public void findError() {
         System.out.println("Fout op (" + badCol + ", " + badRow + ")");
     }
 }
+
+public int getIncorrectRowNr() {
+    int badRow = -1;
+    int row = 0;
+    while (row < getWorld().getHeight()) {
+        setLocation(0, row);
+        setDirection(EAST);
+        if (countEggsInRow() % 2 != 0) badRow = row;
+        row++;
+    }
+    return badRow;
+}
+public int getIncorrectColNr() {
+    int badCol = -1;
+    int col = 0;
+    while (col < getWorld().getWidth()) {
+        if (countEggsInColumn(col) % 2 != 0) badCol = col;
+        col++;
+    }
+    return badCol;
+}
+public void fixIncorrectBit() {
+    int row = getIncorrectRowNr();
+    int col = getIncorrectColNr();
+
+    if (row == -1) {
+        System.out.println("Geen fout");
+        return;
+    }
+
+    setLocation(col, row);
+    if (onEgg()) {
+        hatchEgg();         // illegaal ei ? weghalen
+    } else {
+        layEgg();           // ontbrekend ei ? toevoegen
+    }
+    System.out.println("Fout hersteld op (" + col + ", " + row + ")");
+}
     
 }
