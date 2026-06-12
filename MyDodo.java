@@ -555,5 +555,35 @@ public void fixIncorrectBit() {
     }
     System.out.println("Fout hersteld op (" + col + ", " + row + ")");
 }
+
+
+public int countEggsToBorder() {
+    int count = 0;
+    while (!borderAhead()) {
+        if (onEgg()) count++;
+        move();
+    }
+    if (onEgg()) count++;
+    return count;
+}
+public void terugNaarRand() {
+    turn180();
+    while (!borderAhead()) move();
+    turn180();
+}
+public int getBadLineNr() {
+    int bad = -1;
+    int nr = 1;
+    while (true) {
+        if (countEggsToBorder() % 2 != 0) bad = nr;
+        terugNaarRand();
+        turnRight();
+        if (borderAhead()) { turnLeft(); break; }
+        move();
+        turnLeft();
+        nr++;
+    }
+    return bad;
+}
     
 }
