@@ -135,6 +135,9 @@ public class MyDodo extends Dodo
         }
     }  
     
+    /**
+     * Dodo draait 180 graden
+     */
     public void turn180 () {
         turnRight();
         turnRight();
@@ -161,6 +164,10 @@ public class MyDodo extends Dodo
         turn180();
     }
     
+    
+    /**
+     * Dodo climbed over fences
+     */
     public void climbOverFence () {
         turnLeft();
         move();
@@ -227,6 +234,10 @@ public void vulLegeNestenOp () {
     }
 }
 
+
+/**
+ * Dodo klimt over de hekken stopt daarna op de hek
+ */
 public void walkToNestClimbingOverFences() {
     while(!onNest()) {
         if (fenceAhead()) {
@@ -298,6 +309,9 @@ public void doolhofLastig() {
 
 }
 
+/**
+ * Dodo drait naar oost
+ */
 public void faceEast() {
     while(getDirection() !=EAST) {
         turnLeft();
@@ -435,6 +449,9 @@ public void eggPyramid() {
     }
 }
 
+/**
+ * Dodo berekent gemidelde eiren per rij
+ */
 public double gemideldEirenPerRij() {
     int totalEggs = 0;
     int row = 0;
@@ -450,6 +467,7 @@ public double gemideldEirenPerRij() {
         return average;
     }
     
+
 public int countEggsInColumn(int column) {
     setLocation(column, 0);
     setDirection(SOUTH);
