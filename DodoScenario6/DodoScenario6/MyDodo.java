@@ -111,4 +111,21 @@ public void makeListOfSurpriseEggsAndPrintCoordinates() {
         printCoordinatesOfEgg(egg);
     }
 }
+
+public void findMostValuableEgg() {
+    List<SurpriseEgg> eggs = makeListOfSurpriseEggs();
+    
+    SurpriseEgg bestEgg = null;
+    int highestValue = 0;
+    
+    for (SurpriseEgg egg : eggs) {
+        System.out.println("X: " + egg.getX() + ", Y: " + egg.getY() + ", waarde: " + egg.getValue());
+        if (egg.getValue() > highestValue) {
+            highestValue = egg.getValue();
+            bestEgg = egg;
+        }
+    }
+    
+    System.out.println("Meest waardevolle ei: X " + bestEgg.getX() + ", Y " + bestEgg.getY() + ", waarde " + highestValue);
+}
 }
