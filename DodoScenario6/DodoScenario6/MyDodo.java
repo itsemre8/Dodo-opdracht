@@ -128,4 +128,7 @@ public void findMostValuableEgg() {
     
     System.out.println("Meest waardevolle ei: X " + bestEgg.getX() + ", Y " + bestEgg.getY() + ", waarde " + highestValue);
 }
+
+
+
 }
