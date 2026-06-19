@@ -129,6 +129,17 @@ public void findMostValuableEgg() {
     System.out.println("Meest waardevolle ei: X " + bestEgg.getX() + ", Y " + bestEgg.getY() + ", waarde " + highestValue);
 }
 
-
+public double gemideldeeiwaarde() {
+    List<SurpriseEgg> eggs = makeListOfSurpriseEggs();
+    
+    int totaal = 0;
+    for (SurpriseEgg egg : eggs) {
+        totaal += egg.getValue();
+    }
+    
+    double average = (double) totaal / eggs.size();
+    System.out.println("Gemiddelde waarde: " + average);
+    return average;
+}
 
 }
