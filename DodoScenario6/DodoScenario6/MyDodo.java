@@ -112,6 +112,10 @@ public void makeListOfSurpriseEggsAndPrintCoordinates() {
     }
 }
 
+
+/**
+ *  Dodo probeert het meeste waardevolle ei te vinden
+ */
 public void findMostValuableEgg() {
     List<SurpriseEgg> eggs = makeListOfSurpriseEggs();
     
@@ -129,6 +133,10 @@ public void findMostValuableEgg() {
     System.out.println("Meest waardevolle ei: X " + bestEgg.getX() + ", Y " + bestEgg.getY() + ", waarde " + highestValue);
 }
 
+
+/**
+ * Dodo berekent de gemidelde waarde van de eiren
+ */
 public double gemideldeeiwaarde() {
     List<SurpriseEgg> eggs = makeListOfSurpriseEggs();
     
@@ -140,6 +148,20 @@ public double gemideldeeiwaarde() {
     double average = (double) totaal / eggs.size();
     System.out.println("Gemiddelde waarde: " + average);
     return average;
+}
+
+/**
+ * Dodo zet random stappen
+ */
+public void moveRandomly() {
+    int myNrOfStepsTaken = 0;
+    while (myNrOfStepsTaken < Mauritius.MAXSTEPS) {
+        setDirection(randomDirection());
+        if (!borderAhead() && !fenceAhead()) {
+            move();
+        }
+        myNrOfStepsTaken++;
+    }
 }
 
 }
